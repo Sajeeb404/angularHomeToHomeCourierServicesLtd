@@ -1,0 +1,111 @@
+
+
+<div style="margin-left: 80px; margin-right: 80px;">
+    <br>
+  <h3 class="mb-4 pb-2 pb-md-0 mb-md-5" >All Delivered List</h3>
+
+<div class="input-group" style="width: 520px; height: 40px;">
+<input [(ngModel)]="UserListSearch" type="search" class="form-control rounded" placeholder=" Search..." aria-label="Search" aria-describedby="search-addon" />
+<button type="button" class="btn btn-outline-primary">Search</button>
+</div>
+<br>
+
+<div>
+  <div style="float: left;">
+    <label for="">Show
+      <select name="" id="" [(ngModel)]="tableSize" (change)="pagenUmber()">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="">All</option>
+      </select>
+      entries
+    </label>
+  </div>
+  
+  
+  <div style="float: right;">
+    <pagination-controls style="font-size: 20px; font-weight: bold;"
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableSizechange($event)"
+    >
+  
+    </pagination-controls>
+  </div>
+  </div>
+      
+<table class="table">
+  <thead>
+    <tr >
+      <th scope="col" (click)="sort('id')">Courier Id <span class="fa fa-sort"></span></th>
+          <th scope="col" (click)="sort('p_senderAddress')">Sender Address <span class="fa fa-sort"></span></th>
+          <th scope="col" (click)="sort('p_ReceiverAddress')">Reciver Address <span class="fa fa-sort"></span></th>
+          <!-- <th scope="col">Possible Delivered Time</th> -->
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+    </tr>
+  </thead>
+ 
+    <tbody>
+
+      <tr *ngFor="let v of form | filter:UserListSearch | orderBy: oderHeader : isDescOrder | paginate:{
+        itemsPerPage:tableSize,
+        currentPage:page,
+       totalItems:count
+        };
+        let i= index ">
+        <td>{{v.id}}</td>
+        <td>{{v.p_senderAddress}}</td>
+        <td>{{v.p_ReceiverAddress}}</td>
+        <!-- <td>{{v.createdAt}}</td> -->
+
+
+        <td>{{v.courierStatus}}</td>
+
+
+        <td>
+        <!-- <button data-bs-toggle="modal" data-bs-target="#signupModal" class='bx bx-edit' style="font-size: 30px; color: rgb(118, 231, 26);"></button> &nbsp; -->
+        <!-- <button class='bx bx-trash' style="font-size: 30px; color: red;"></button> -->
+        <button style="font-size: 20px; " >View</button>&nbsp;
+        </td>
+       
+      </tr>
+    </tbody>
+
+ 
+</table>
+
+<div>
+  <div style="float: left;">
+    <label for="">Show
+      <select name="" id="" [(ngModel)]="tableSize" (change)="pagenUmber()">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="">All</option>
+      </select>
+      entries
+    </label>
+  </div>
+  
+  
+  <div style="float: right;">
+    <pagination-controls style="font-size: 20px; font-weight: bold;"
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableSizechange($event)"
+    >
+  
+    </pagination-controls>
+  </div>
+  </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+
+
+  
+  

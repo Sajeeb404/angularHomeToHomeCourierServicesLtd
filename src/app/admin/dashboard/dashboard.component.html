@@ -1,0 +1,180 @@
+
+<div class="home-content">
+
+  <br>
+
+
+  <!-- .............1st div start............ -->
+  <div class="overview-boxes">
+    
+    <!-- this div for total branches -->
+    <div  class="box" >
+      <a href="" style="text-decoration: none;" routerLink="/admins/branch/BranchList">
+        <div class="right-side">
+          <div class="box-topic">Total Branches</div>
+          <div class="number">{{formBranchModel.length}}</div>
+        </div>
+      </a>
+      <i class='bx bxl-firebase' style="font-size: 50px;"></i>
+    </div>
+
+    <!-- this div for total employee -->
+    <div class="box">
+      <a href="" style="text-decoration: none;" routerLink="/admins/addemployee/viewEmplist">
+        <div class="right-side">
+          <div class="box-topic">Total Employee</div>
+          <div class="number">{{formForAlluser.length}}</div>
+        </div>
+      </a>
+      <i class='bx bxl-microsoft-teams' style="font-size: 50px;"></i>
+    </div>
+
+    <!-- this div for total user -->
+    <div class="box">
+      <a href="" style="text-decoration: none;" routerLink="/admins/userList">
+        <div class="right-side">
+          <div class="box-topic">Total User</div>
+          <div class="number">{{formForAlluser.length *2}}</div>
+        </div>
+      </a>
+      <i class='bx bxl-microsoft-teams' style="font-size: 50px;"></i>
+    </div>
+
+    <!-- this div for total Courier -->
+    <div class="box">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/allCourierList">
+        <div class="right-side">
+          <div class="box-topic">Total Courier</div>
+          <div class="number">{{formForAllCorier.length}}</div>
+          <div class="indicator">
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+  <!-- .............1st div end............ -->
+
+
+
+  <!-- .............2nd div start............ -->
+  <div class="overview-boxes">
+
+    <div class="box">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/pendingCourierList">
+        <div class="right-side">
+          <div class="box-topic">Total Courier Pending</div>
+          <div class="number">{{formPending.length}}</div>
+          <div class="indicator">
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="box">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/recivedCourierList">
+        <div class="right-side">
+          <div class="box-topic">Total Courier Recived</div>
+          <div class="number">{{formReceived.length}}</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="box">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/onTheWayCourierList">
+        <div class="right-side">
+          <div class="box-topic">Total Courier On The Way</div>
+          <div class="number">{{formOnTheWay.length}}</div>
+          <div class="indicator">
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="box">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/deliverdCourierList">
+        <div class="right-side">
+          <div class="box-topic">Total Courier Delivered</div>
+          <div class="number">{{formDelivered.length}}</div>
+          <div class="indicator">
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+  <!-- .............2nd div end............ -->
+
+
+
+  <!-- .............3rd div start............ -->
+  <div class="overview-boxes">
+
+    <div class="box" style="text-decoration: none;">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/cancelCourierList">
+        <div class="right-side">
+          <div class="box-topic">Total Courier Cancel</div>
+          <div class="number">{{formCancel.length}}</div>
+          <div class="indicator">
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="box">
+      <a href="" style="text-decoration: none;">
+        <div class="right-side">
+          <div class="box-topic">Total Complain</div>
+          <div class="number">40,87006</div>
+          <div class="indicator">
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+  <!-- .............3rd div end............ -->
+  
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+
+
+
+<script>
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".sidebarBtn");
+  sidebarBtn.onclick = function () {
+    sidebar.classList.toggle("active");
+    if (sidebar.classList.contains("active")) {
+      sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+    } else
+      sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+  }
+
+
+
+
+</script>

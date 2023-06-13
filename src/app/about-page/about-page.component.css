@@ -1,0 +1,22 @@
+.home-content{
+    height: 100vh;
+    background-color: rgb(160, 215, 252)
+  }
+.h{
+    border: 5px dotted rgb(12, 11, 11);
+    border-bottom: none; 
+    /* width: 50px; */
+ 
+    
+ }
+#about-me{
+    padding: 4% 10%;
+    background: rgb(160, 215, 252);
+}
+.icon-style{
+    background: rgb(160, 215, 252);
+    color: rgb(12, 100, 201);
+}
+.fa-sharp{
+    color: rgb(255, 215, 37);
+}

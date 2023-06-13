@@ -1,0 +1,16 @@
+.home-content{
+
+    /* background-color: white; */
+    background: rgb(160, 215, 252);
+  }
+
+  input{
+    border-radius: 20px;
+}
+select{
+    border-radius: 20px;
+}
+
+select option{
+    border-radius: 20px;
+}

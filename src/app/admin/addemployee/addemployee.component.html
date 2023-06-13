@@ -1,0 +1,56 @@
+
+<div class="home-content">
+<br>
+
+  <div class="overview-boxes">
+
+    <div class="box" [ngStyle]="{'background-color': btnNumber==1 ? 'lightblue' : 'white'}">
+     <a href="" style="text-decoration: none;" routerLink="/admins/addemployee/newEmployee" (click)="btnClick(1)">
+      <div class="right-side">
+        <div class="box-topic">Add Employee</div>
+               
+      </div>
+     </a>
+
+      <i class='bx bx-layer' style="font-size: 30px;"></i>
+    </div>
+
+    <div class="box" [ngStyle]="{'background-color': btnNumber==2 ? 'lightblue' : 'white'}">
+     <a href="" style="text-decoration: none;" routerLink="/admins/addemployee/viewEmplist" (click)="btnClick(2)">
+      <div class="right-side">
+        <div class="box-topic">Employee List</div>
+               
+      </div>
+     </a>
+     <i class='bx bx-spreadsheet' style="font-size: 30px;"></i>
+    </div>
+
+    <!-- <div class="box" >
+     <a href="" style="text-decoration: none;">
+      <div class="right-side">
+        <div class="box-topic">Employee Status</div>
+               
+      </div>
+     </a>
+    
+     <i class='bx bx-user'  style="font-size: 30px;"></i>
+    </div> -->
+
+  </div>
+
+  <hr>
+  <router-outlet></router-outlet>
+
+
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function () {
+      sidebar.classList.toggle("active");
+      if (sidebar.classList.contains("active")) {
+        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else
+        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+  </script>

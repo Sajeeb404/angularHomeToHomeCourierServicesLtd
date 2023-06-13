@@ -1,0 +1,247 @@
+
+<div class="home-content">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div 
+    style="margin-left: 100px; 
+    margin-right: 100px;
+    margin-top: 10px;
+    margin: auto; 
+    width: 1200px; 
+    height: 1220px; 
+    background-color: hsl(195, 26%, 28%);
+    border-radius: 30px;  ">
+<br>
+
+        <h3 class="text-center" style="font-size: 35px; color: white;"><B>Courier Shipping Request Form </B></h3>
+        <br>
+        <form [formGroup]="form" (ngSubmit)="saveValue()" style="width: 1100px; margin: auto;">
+
+            <!-- product sender information div start -->
+            <div style="background-color: rgb(160, 215, 252); padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            border-radius: 20px;">
+                <h3 class="fw-normal mb-3 pb-3"><B style="font-size: 30px;">Sender Information </B></h3>
+                
+                <div class="row">
+
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline" >
+                            <input formControlName="p_senderName" type="text" name="p_senderName" 
+                                class="form-control form-control-lg" placeholder="Full Name"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                            <input formControlName="p_senderPhone" type="text" name="p_senderPhone" 
+                                class="form-control form-control-lg" placeholder="Phone Number"/>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                     <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline">
+                            <input formControlName="p_senderAddress" type="text" name="p_senderAddress"
+                                placeholder="Address" class="form-control form-control-lg" />
+                        </div>
+
+                    </div> 
+
+                 
+
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                        <select formControlName="p_senderBranch" name='p_senderBranch' class="form-control form-control-lg" (change)="onChange()">
+                            <option value="" disabled>Choose Branch Name</option>
+                            <option *ngFor="let li of BranchList" [value]=" li.branchName +' '+ li.thanaName +' '+ li.districtName">
+                                <b>{{"  "+li.branchName +" "+ li.thanaName +" "+ li.districtName}}</b>
+                            </option>
+                        </select>                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <!-- product sender information div end -->
+
+            <!-- product reciver infromation div start -->
+            <div style="background-color: rgb(160, 215, 252);padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            border-radius: 20px;">
+
+                <h3 class="fw-normal mb-3 pb-3"><B style="font-size: 30px;">Destination Information</B></h3>
+
+            <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                        <input formControlName="p_ReceiverName" type="text" name="p_ReceiverName"
+                                placeholder="Full Name" class="form-control form-control-lg" />
+                        </div>
+                    </div>
+
+                <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                        <input formControlName="p_ReceiverPhone" type="text" name="p_ReceiverPhone"
+                            placeholder="Phone Number" class="form-control form-control-lg" />
+                        </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-4 pb-2">
+                    <div class="form-outline">
+    <input placeholder="Address" formControlName="p_ReceiverAddress" type="text" class="form-control form-control-lg" />
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4 pb-2">
+                    <div class="form-outline">
+                            <select formControlName="p_ReceiverBranch" name='p_ReceiverBranch' class="form-control form-control-lg" (change)="onChange()">
+                                <option value="" disabled selected>Choose Branch Name</option>
+                                <option *ngFor="let li of BranchList" [value]=" li.branchName +' '+ li.thanaName +' '+ li.districtName">
+                                    <b>{{"  "+li.branchName +" "+ li.thanaName +" "+ li.districtName}}</b>
+                                </option>
+                            </select> 
+                    </div>
+
+                    </div>
+
+        </div>
+
+
+            </div>
+            <br>
+            <!-- product reciver infromation div end -->
+
+
+
+
+            <!-- product information div start -->
+            <div style="background-color:rgb(160, 215, 252);padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            border-radius: 20px;">
+
+                <h3 class="fw-normal mb-3 pb-3" style="font-size: 30px;"><B >Shipment Information</B></h3>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+
+                            <select formControlName="prodcuttype"  name='prodcuttype'
+                                class="form-control form-control-lg">
+                                <option value="">Choose Content Type</option>
+                                <option>Pepers</option>
+                                <option>Fruts</option>
+                                <option>Furnitures</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <input placeholder="Content Name" formControlName="productname" type="text" name="Productname"  class="form-control 
+                form-control-lg" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                          
+                            <input placeholder="Content Weight (kg)" formControlName="productweight" type="number" (change)="calculateTk()"
+                                name="productweight" id="productwidthid" class="form-control 
+                        form-control-lg" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                      
+                      
+                            <input readonly placeholder="Charge Amount" formControlName="chargeAmount" type="number" name="chargeAmount" 
+                                class="form-control 
+                        form-control-lg" [(ngModel)]="total"/>
+                       
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <br>
+            <!-- product information div end -->
+
+            <!-- product charge div start -->
+
+
+            <div style="background-color:rgb(160, 215, 252);padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            border-radius: 20px;">
+
+<div style="width: 700px; margin-left: 10px;">
+    <div class="row">
+        <h3><B style="font-size: 30px;">Payment Method</B></h3>
+
+        <label class="form-control" style="width: 520px;">
+            <input formControlName="paymentMethod" style="height: 22px; width: 22px;" type="radio"
+                name="paymentMethod"  value="Cash On Payment" />
+            <b style="font-size: 20px;"> &nbsp; Cash On Payment</b>
+            &nbsp;
+            <input formControlName="paymentMethod" style="height: 22px; width: 22px;" type="radio"
+                name="paymentMethod" value="Online Payment" />
+            <b style="font-size: 20px;"> &nbsp; Online Payment</b>
+            &nbsp;
+        </label>
+        
+    </div>
+</div>
+             
+
+            </div>
+
+
+            <!-- product charge div end -->
+
+
+
+            <div class="mt-4 pt-2">
+ <button class="btn btn-success btn-lg form-control form-control-lg" type="submit" style="font-size: 30px; border-radius: 20px;"><b>Registration</b></button>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </form>
+    </div>
+<br>
+<br>
+<br>
+<br>
+</div>

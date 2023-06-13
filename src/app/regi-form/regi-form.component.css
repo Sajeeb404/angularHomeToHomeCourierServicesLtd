@@ -1,0 +1,31 @@
+
+.popup{
+    width: 400px;
+    height: 200px;
+    background: #5e5b5b;
+    border-radius: 6px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) ;
+    visibility: visible;
+}
+
+.open-popup{
+visibility: hidden;
+
+
+}
+
+.popups{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-70%, -70%);
+}
+
+
+  #features{
+    padding: 5% 10%;
+    background: rgb(160, 215, 252);
+    }

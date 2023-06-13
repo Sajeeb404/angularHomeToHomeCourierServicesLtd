@@ -1,0 +1,202 @@
+<div class="home-content">
+<br>
+
+<div style="margin-left: 80px; margin-right: 80px; margin-top: 20px; ">
+
+  <h3 class="text-center" style="font-size: 35px; color: black;"><B>All Employee List</B></h3>
+  <br>
+  
+  <div class="col-md-6 ps-0 mb-3" style="width: 520px; height: 40px;">
+    <input [(ngModel)]="UserListSearch" type="search" class="form-control form-control-lg" placeholder=" Search..." aria-label="Search" aria-describedby="search-addon" />
+    
+  </div>
+
+  <br>
+
+  <div>
+    
+    <div style="float: left;">
+      <label for="">Show
+        <select name="" id="" [(ngModel)]="tableSize" (change)="pagenUmber()">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="">All</option>
+        </select>
+        entries
+      </label>
+    </div>
+    
+    
+    <div style="float: right;">
+      <pagination-controls style="font-size: 20px; font-weight: bold;"
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableSizechange($event)"
+      >
+    
+      </pagination-controls>
+    </div>
+    </div>
+
+
+  <table class="table">
+      <thead>
+        <tr>
+  
+          <!-- <th (click)="sort('id')" scope="col">ID <span class="fa fa-sort"></span></th> -->
+          <th (click)="sort('userFullName')" scope="col">Full Name <span class="fa fa-sort"></span></th>
+          <th (click)="sort('userName')" scope="col">User Name <span class="fa fa-sort"></span></th>
+          <th (click)="sort('email')" scope="col">Email Address <span class="fa fa-sort"></span></th>
+          <th (click)="sort('password')" scope="col">Password <span class="fa fa-sort"></span></th>
+          <th (click)="sort('role')" scope="col">Role <span class="fa fa-sort"></span></th>
+          <th (click)="sort('status')" scope="col">Status <span class="fa fa-sort"></span></th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of form | filter:UserListSearch | orderBy: oderHeader : isDescOrder | paginate:{
+          itemsPerPage:tableSize,
+          currentPage:page,
+         totalItems:count
+          };
+          let i= index ">
+  
+          <!-- <td>{{v.serialNo}}</td> -->
+          <td>{{v.userFullName}}</td>
+           <td>{{v.userName}}</td>
+           <td>{{v.email}}</td>
+          <td>{{v.password}}</td>
+          <td><span *ngFor="let a of v.role">{{a.roleName}}</span></td>
+          <td *ngIf="v.enabled"><button class="btn btn-success" type="submit" (click)="delete(v, false)">Acitive </button></td>
+          <td *ngIf="!v.enabled"><button class="btn btn-danger" type="submit" (click)="delete(v, true)">Deactive </button></td>
+  
+       
+          <td><button (click)="edits(v)" data-bs-toggle="modal" data-bs-target="#signupModal" type="submit"><i class='bx bx-edit' style="font-size: 30px; color: rgb(118, 231, 26);"></i> </button></td>
+          <td ><button type="submit"><i class='bx bx-trash' style="font-size: 30px; color: red;" (click)="deletes(v)"></i></button></td> 
+  
+  
+        </tr>
+  
+     
+    </table>
+    <div> 
+      <div style="float: left;">
+        <label for="">Show
+          <select name="" id="" [(ngModel)]="tableSize" (change)="pagenUmber()">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="">All</option>
+          </select>
+          entries
+        </label>
+      </div>
+      
+      
+      <div style="float: right;">
+        <pagination-controls style="font-size: 20px; font-weight: bold;"
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableSizechange($event)"
+        >
+      
+        </pagination-controls>
+      </div>
+      </div>
+
+</div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+  
+    </div>
+     
+      <!-- Sign Up Start -->
+      
+      <div class="modal fade" id="signupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+  
+            <form name="form">
+              <div class="modal-header">
+                <h5 class="modal-title d-flex align-items-center">
+                  <i class="bi bi-person-lines-fill fs-3 me-2"></i>User List Edit Form            
+                </h5>
+                <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body"> 
+  
+                <div class="container-fluid">
+                  <div class="row" >
+                    <div class="col-md-6 ps-0 mb-3">
+                      <label class="form-label" for="userfullnameid">Full Name</label>
+                      <input type="text" class="form-control shadow-none"
+                      [ngModel]="forms.userFullName" 
+                      name="userfullname"
+                      id="userfullnameid"
+                      
+                     
+                      >
+                      
+                    </div>
+                    <div class="col-md-6 ps-0 mb-3">
+                      <label class="form-label" for="usernameid"> User Name </label>
+                      <input type="text" class="form-control shadow-none"
+                      [ngModel]="forms.userName" 
+                      name="username"
+                      id="usernameid"
+                  
+                      >
+   
+                      
+                    </div>
+                    <div class="col-md-6 ps-0 mb-3">
+                      <label class="form-label" for="emailid">Email Address</label>
+                      <input type="email" class="form-control shadow-none"
+                      [ngModel]="forms.email"
+                      name="email"
+                      id="emailid"
+                      >
+                    </div>
+                    <div class="col-md-6 ps-0">
+                      <label class="form-label" for="passwordid">Password</label>
+                      <input type="text" class="form-control shadow-none"
+                      [ngModel]="forms.password"
+                      name="password"
+                      id="passwordid"
+                      >
+                    </div>          
+                  </div>
+                </div>
+                <div class="text-center my-1">
+                  <button type="submit" class="btn btn-dark shadow-none" (click)="onSubmit()">Update</button>
+      
+                </div>
+        
+              </div>       
+            </form>  
+          </div>
+        </div>
+      </div>
+  
+
+

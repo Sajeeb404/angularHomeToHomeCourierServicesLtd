@@ -1,0 +1,144 @@
+<div class="home-content" >
+  <br>
+
+<!-- ******1st div for button start*********** -->
+  <div  class="overview-boxes" >
+
+    <div class="box" [ngStyle]="{'background-color': btnNumber==1 ? 'lightblue' : 'white'}">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/addParcell" (click)="buttonColor(1)">
+        <div class="right-side">
+          <div class="box-topic">Courier Product</div>
+
+        </div>
+
+
+      </a>
+
+      <i class='bx bx-layer' style="font-size: 30px;"></i>
+    </div>
+
+
+    <div class="box" [ngStyle]="{'background-color': btnNumber==2 ? 'lightblue' : 'white'}">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/allCourierList" (click)="buttonColor(2)">
+        <div class="right-side">
+          <div class="box-topic" >All Courier List</div>
+
+        </div>
+      </a>
+      <i class='bx bx-spreadsheet' style="font-size: 30px;"></i>
+    </div>
+
+    <div class="box" [ngStyle]="{'background-color': btnNumber==3 ? 'lightblue' : 'white'}">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/pendingCourierList" (click)="buttonColor(3)">
+        <div class="right-side">
+          <div class="box-topic">Courier Pending List</div>
+
+        </div>
+      </a>
+
+      <i class='bx bx-spreadsheet' style="font-size: 30px;"></i>
+    </div>
+
+
+
+    <div class="box" [ngStyle]="{'background-color': btnNumber==4 ? 'lightblue' : 'white'}">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/recivedCourierList" (click)="buttonColor(4)">
+        <div class="right-side">
+          <div class="box-topic">Courier Recived List</div>
+
+        </div>
+      </a>
+
+      <i class='bx bx-spreadsheet' style="font-size: 30px;"></i>
+    </div>
+
+
+
+  </div>
+  <!-- ******1st div for button end*********** -->
+
+
+
+<!-- ******2nd div for button start*********** -->
+  <div class="overview-boxes">
+
+    <div class="box" [ngStyle]="{'background-color': btnNumber==5 ? 'lightblue' : 'white'}">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/onTheWayCourierList" (click)="buttonColor(5)">
+        <div class="right-side">
+          <div class="box-topic">Courier On The List </div>
+
+        </div>
+      </a>
+
+      <i class='bx bx-spreadsheet' style="font-size: 30px;"></i>
+    </div>
+
+    
+    <div class="box" [ngStyle]="{'background-color': btnNumber==6 ? 'lightblue' : 'white'}">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/deliverdCourierList" (click)="buttonColor(6)">
+        <div class="right-side">
+          <div class="box-topic">Courier Delivered List</div>
+
+        </div>
+      </a>
+
+      <i class='bx bx-spreadsheet' style="font-size: 30px;"></i>
+    </div>
+
+    <div class="box" [ngStyle]="{'background-color': btnNumber== 7 ? 'lightblue' : 'white'}">
+      <a href="" style="text-decoration: none;" routerLink="/admins/parcelDetail/cancelCourierList" (click)="buttonColor(7)">
+        <div>
+          <div class="box-topic" style="color: red; font-weight: bold;">Courier Cancel List</div>
+
+        </div>
+      </a>
+
+      <i class='bx bx-spreadsheet' style="font-size: 30px; color: red; "></i>
+    </div>
+
+
+
+  </div>
+  <!-- ******2nd div for button end*********** -->
+
+  <hr>
+  <router-outlet></router-outlet>
+
+
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function () {
+      sidebar.classList.toggle("active");
+      if (sidebar.classList.contains("active")) {
+        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else
+        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+
+
+
+
+
+
+  </script>
+
+  <script>
+        // var elements = document.getElementsByClassName("box");
+        // for(var i = 0; i< elements.length; i++){
+        //   elements[i].onclick=function(){
+        //     this.classList.add("bac");
+        //   };
+        // }
+
+
+        const navClasslis = document.querySelectorAll('.box')
+          navClasslis.forEach(navss =>{
+            navss.addEventListener('click', () =>{
+              document.querySelector('.active')?.classList.remove('active');
+              navss.classList.add('active');
+            })
+
+          })
+      </script> 

@@ -1,0 +1,22 @@
+#features{
+    padding: 5% 10%;
+    background: rgb(160, 215, 252);
+    
+    }
+    .features-col{
+        border: 1px solid rgb(7, 5, 8);
+        border-radius: 20px;
+        padding: 15px;
+        margin: 20px 0;
+        transition: 1s;
+    }
+    .features-col:hover{
+        transform: scale(1.1);
+        box-shadow: 2px 6px 5px black;
+    }
+    .icon-style{
+        background: rebeccapurple;
+        color: #222121;
+        padding: 15px;
+        margin: 5px 0;
+    }

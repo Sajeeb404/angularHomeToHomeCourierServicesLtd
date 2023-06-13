@@ -1,0 +1,156 @@
+
+<div class="home-content">
+<br>
+<br>
+<br>
+<div style="margin-left: 100px; 
+margin-right: 100px;
+margin-top: 10px;
+margin: auto; 
+width: 1200px; 
+height: 500px; 
+background-color: hsl(195, 26%, 28%);
+border-radius: 30px;  ">
+<br>
+ <h3 class="text-center" style="font-size: 35px; color: white;"><B>Add New Employee </B></h3>
+<br>
+
+<form *ngIf="!isSuccessful" name="form" (ngSubmit)="onSubmit()" #f="ngForm"  style="width: 1100px; margin: auto;">
+        
+   <div style="background-color: rgb(160, 215, 252); padding-top: 20px;
+            padding-right: 30px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            border-radius: 20px;">
+
+
+<div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                    <input 
+                    type="text" 
+                    name="userfullnames" 
+                    placeholder="Full Name" 
+                    [(ngModel)]="form.userfullname"              
+                    class="form-control form-control-lg" />
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+
+                <div class="form-outline">
+                <input type="text" name="username" [(ngModel)]="form.username" placeholder="User Name" 
+                        class="form-control form-control-lg" />
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6 mb-4 pb-2">
+                <div class="form-outline">
+
+                    <input 
+                    type="email" 
+                    placeholder="Email" 
+                    name="email" 
+                    [(ngModel)]="form.email" 
+                    class="form-control form-control-lg"
+                     />
+
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 pb-2">
+                <div class="form-outline">
+
+                    <input 
+                    type="password" 
+                    placeholder="Password" 
+                    name="password"
+                    class="form-control form-control-lg" />
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+
+            <div class="col-md-6 mb-4 pb-2">
+                <div class="form-outline">
+
+                    <input 
+                    type="tel" 
+                    id="phoneNumberid" 
+                    placeholder="Phone Number" 
+                    name="tel"
+                    [(ngModel)]="form.phnumber"                   
+                     class="form-control form-control-lg" />
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+ 
+      
+                <label class="form-control form-control-lg" style="width: 520px;">
+                    <input class="form-check-input" type="radio" name="genders" id="femaleGender" value="Male"
+                    [(ngModel)]="form.gender" 
+               
+                     /><span style="font-size: 20px;"> &nbsp; Male</span>
+                     &nbsp;
+
+                     <input class="form-check-input" type="radio" name="gender" id="maleGender" value="Female"
+                     [(ngModel)]="form.gender" 
+                                            /><span style="font-size: 20px;"> &nbsp; Female</span>
+                                            &nbsp;
+
+                </label>
+
+
+
+
+            </div>
+        </div>
+
+        <!-- <div class="mt-4 pt-2">
+            <button class="btn btn-primary btn-block">Registration</button>
+        </div> -->
+   </div>
+
+   <div class="mt-4 pt-2">
+    <button class="btn btn-success btn-lg form-control form-control-lg" type="submit"
+        style="font-size: 30px; border-radius: 20px;"><b>Registration</b></button>
+</div>
+    
+    
+    </form>
+
+    <div class="popup" id="popup" *ngIf="isSuccessful">
+        <div class="popups">
+            <h3>Your registration is successful!</h3>
+        </div>
+        <div>
+            <button style="margin-top: 35%; margin-left: 45%; width: 60px;" (click)="popupClose()">OK</button>
+        </div>
+    </div>
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+
+
+
+

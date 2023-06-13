@@ -1,0 +1,43 @@
+<div class="home-content">
+  <br>
+    <div class="overview-boxes">
+  
+      <div class="box" [ngStyle]="{'background-color': btnNumber==1 ? 'lightblue' : 'white'}">
+       <a (click)="buttonColor(1)" href="" style="text-decoration: none;" routerLink="/admins/branch/newBranchadd">
+        <div class="right-side">
+          <div class="box-topic">Add Branches</div>
+                 
+        </div>
+       </a>
+  
+        <i class='bx bx-layer' style="font-size: 30px;"></i>
+      </div>
+  
+      <div class="box" [ngStyle]="{'background-color': btnNumber==2 ? 'lightblue' : 'white'}">
+       <a (click)="buttonColor(2)" href="" style="text-decoration: none;" routerLink="/admins/branch/BranchList">
+        <div class="right-side">
+          <div class="box-topic">Branches List</div>
+                 
+        </div>
+       </a>
+       <i class='bx bx-spreadsheet' style="font-size: 30px;"></i>
+      </div>
+  
+      
+    </div>
+    <hr>
+    <router-outlet></router-outlet>
+  
+  
+  
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else
+          sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+    </script>

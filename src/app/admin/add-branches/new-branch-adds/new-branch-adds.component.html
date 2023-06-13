@@ -1,0 +1,158 @@
+<div class="home-content">
+    <br>
+    <br>
+    <br>
+
+    <div style="margin-left: 100px; 
+margin-right: 100px;
+margin-top: 10px;
+margin: auto; 
+width: 1200px; 
+height: 600px; 
+background-color: hsl(195, 26%, 28%);
+border-radius: 30px;  ">
+        <br>
+        <h3 class="text-center" style="font-size: 35px; color: white;"><B>Add New Branch </B></h3>
+        <br>
+
+        <form *ngIf="!isSuccessful" [formGroup]="form" (ngSubmit)="onSubmit()" style="width: 1100px; margin: auto;">
+
+            <div style="background-color: rgb(160, 215, 252); padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            border-radius: 20px;">
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <input placeholder="Branch Name" type="text" name="branchName"
+                                class="form-control form-control-lg" formControlName="branchName" />
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+
+                        <div class="form-outline">
+                            <select (ngModelChange)="changeUpazilas($event)" name="districtName"
+                                class="form-control form-control-lg" formControlName="districtName">
+                                <option value="" disabled>Choose District Name</option>
+                                <option *ngFor="let item of listOfdistricts" [value]="item.id">
+                                    {{item.name}}
+                                </option>
+                            </select>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <select id='thanaNameid' name='thanaName' class="form-control form-control-lg"
+                                formControlName="thanaName">
+                                <option value="" disabled>Choose Thana Name</option>
+                                <option *ngFor="let v of isUpazilas" [value]="v.name">
+                                    {{v.name}}
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline">
+                            <input placeholder="Email Address" type="email" name="email"
+                                class="form-control form-control-lg" formControlName="email" />
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                            <input type="tel" placeholder="Phone Number" name="phoneNumber"
+                                class="form-control form-control-lg" formControlName="phoneNumber" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+
+                            <input readonly type="number" placeholder="Latitude" name="latitude"
+                                class="form-control form-control-lg" formControlName="latitude"
+                                [(ngModel)]="latitude1" />
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                            <input readonly type="number" placeholder="Longitude" name="longitude"
+                                class="form-control form-control-lg" formControlName="longitude"
+                                [(ngModel)]="longitude1" />
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="mt-4 pt-2">
+                <button class="btn btn-success btn-lg form-control form-control-lg" type="submit"
+                    style="font-size: 30px; border-radius: 20px;"><b>Registration</b></button>
+            </div>
+
+        </form>
+
+
+        <div class="popup" id="popup" *ngIf="isSuccessful">
+            <div class="popups">
+                <h3 class="text-center" style="color: white;">Your registration is successful</h3>
+            </div>
+            <div>
+                <button style="margin-top: 35%; margin-left: 45%; width: 70px;"
+                    (click)="popupClose()"><b>OK</b></button>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</div>

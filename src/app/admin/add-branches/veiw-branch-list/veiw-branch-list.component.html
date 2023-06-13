@@ -1,0 +1,292 @@
+<div class="home-content">
+  <br>
+<div style="margin-left: 80px; margin-right: 80px; margin-top: 20px;">
+    
+
+  <h3 class="text-center" style="font-size: 35px; color: black;"><B>ALL Branch List</B></h3>
+
+<div class="col-md-6 ps-0 mb-3" style="width: 520px; height: 40px;">
+
+<input class="form-control form-control-lg" [(ngModel)]="UserListSearch" type="search" placeholder=" Search..." aria-label="Search" aria-describedby="search-addon" />
+
+</div>
+
+<br>
+
+<div>
+
+<div style="float: left;">
+  <label for="" style="font-size: 20px; font-weight: bold">Show
+    <select name="" id="" [(ngModel)]="tableSize" (change)="pagenUmber()" style="font-size: 20px; ">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="">All</option>
+    </select>
+    entries
+  </label>
+</div>
+
+
+<div style="float: right;">
+  <pagination-controls style="font-size: 20px; font-weight: bold;"
+  previousLabel="Prev"
+  nextLabel="Next"
+  (pageChange)="onTableSizechange($event)"
+  >
+
+  </pagination-controls>
+</div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr >
+      <th scope="col" (click)="sort('id')">ID <span class="fa fa-sort"></span></th>
+      <th scope="col" (click)="sort('branchName')">Bramch Name <span class="fa fa-sort"></span></th>
+      <th scope="col" (click)="sort('districtName')">District Name <span class="fa fa-sort"></span></th>
+      <th scope="col" (click)="sort('thanaName')">Thana Name <span class="fa fa-sort"></span></th>
+     
+      <th scope="col" (click)="sort('email')">Email <span class="fa fa-sort"></span></th>
+      <th scope="col" (click)="sort('phoneNumber')">Phone Number <span class="fa fa-sort"></span></th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let v of form | filter:UserListSearch | orderBy: oderHeader : isDescOrder | paginate:{
+      itemsPerPage:tableSize,
+      currentPage:page,
+     totalItems:count
+      };
+      let i= index ">
+      <td>{{v.id}}</td>
+      <td>{{v.branchName}}</td>
+      <td>{{v.districtName}}</td>
+      <td>{{v.thanaName}}</td>
+     
+      <td>{{v.email}}</td>
+      <td>{{v.phoneNumber}}</td>
+
+  
+      <td><button data-bs-toggle="modal" data-bs-target="#signupModal" type="submit" (click)="edit(v)"><i class='bx bx-edit' style="font-size: 30px; color: rgb(118, 231, 26);"></i> </button></td>
+
+
+      <td><button type="submit"><i class='bx bx-trash' style="font-size: 30px; color: red;" (click)="delete(v)"></i></button></td>
+
+    </tr>
+
+ 
+</table>
+<div>
+
+  <div style="float: left;">
+    <label for="" style="font-size: 20px; font-weight: bold">Show
+      <select name="" id="" [(ngModel)]="tableSize" (change)="pagenUmber()" style="font-size: 20px; ">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="">All</option>
+      </select>
+      entries
+    </label>
+  </div>
+  
+  
+  <div style="float: right;">
+    <pagination-controls style="font-size: 20px; font-weight: bold;"
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableSizechange($event)"
+    >
+  
+    </pagination-controls>
+  </div>
+  </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+
+   
+    <!-- Sign Up Start -->
+    <div class="modal fade" id="signupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="border-radius: 30px;">
+          <div style="margin-left: 100px; 
+          margin-right: 100px;
+          margin-top: 10px;
+          margin: auto; 
+          width: 1000px; 
+          height: 550px; 
+          background-color: hsl(195, 26%, 28%);
+          border-radius: 30px;  ">
+
+                  <div style="float: right; margin-right: 10px;margin-top: 10px; width: 40px; background-color: white; border-radius: 15px;">
+                    <button style="font-size: 25px" type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+
+        <h3 class="text-center" style="margin-top: 10px; font-size: 35px; color: white;"><B>Edit Branch </B></h3>
+
+        <form name="form">
+   
+          <div class="modal-body"> 
+
+            <div style="background-color: rgb(160, 215, 252); padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            border-radius: 20px;">
+
+            <div class="row">
+              <div class="col-md-6 mb-4 pb-2">
+                <div class="form-outline">
+                  <input type="text" class="form-control shadow-none"
+                  [(ngModel)]="forms.branchName"
+                  name="branchname"
+                  id="branchnameid"
+                  placeholder="Enter Branch Name"
+                  class="form-control form-control-lg"
+                  >
+                </div>
+
+               </div>
+
+               <div class="col-md-6 mb-4 pb-2">
+                <div class="form-outline">
+                  <select 
+                  id='districttNameid' 
+                  name='districtName'
+                  [(ngModel)]="forms.districtName" 
+                  (ngModelChange)="changeUpazilas($event)"
+                  class="form-control form-control-lg"
+                  
+                  >
+                      <option value="" >Choose Dristrict Name</option>
+                      <option *ngFor="let item of listOfdistricts" [value]="item.name">
+                        {{item.name}}
+                      </option>    
+                  </select>
+                </div>
+
+               </div>
+            </div>
+
+            <div class="row">
+
+              <div class="col-md-6 mb-4 pb-2">
+
+                <div class="form-outline">
+                  <select 
+                  id='thanaNameid' 
+                  name='thanaName' 
+                  [(ngModel)]="forms.thanaName"
+                  class="form-control form-control-lg"
+                
+                  >
+                      <option value="" >Choose Thana Name</option>
+                      <option *ngFor="let item of isUpazilas" [value]="item.name">
+                        {{item.name}}
+                      </option>    
+                  </select>
+                </div>
+
+
+              </div>
+
+              <div class="col-md-6 mb-4 pb-2">
+             <div class="form-outline">
+              <input type="email" class="form-control shadow-none"
+              name="email"
+              [(ngModel)]="forms.email"
+              class="form-control form-control-lg"
+              placeholder="Enter Email"
+              >
+             </div>
+              </div> 
+
+            </div>
+
+            <div class="row">
+                  <div class="col-md-6 mb-4 pb-2"> 
+                    <div class="form-outline">
+                      <input type="tel" class="form-control shadow-none"
+                      class="form-control form-control-lg"
+                      name="phoneNumber"
+                      [(ngModel)]="forms.phoneNumber"
+                      placeholder="Enter  Phone Number"
+                      >
+                    </div>
+                  </div> 
+
+                  <div class="col-md-6 mb-4 pb-2">
+                    <div class="form-outline">
+                        <input  type="number" placeholder="Latitude" name="latitude"
+                            class="form-control form-control-lg"  />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+              <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                      <input  type="number" placeholder="Longitude" name="longitude"
+                          class="form-control form-control-lg" formControlName="longitude" />
+                  </div>
+              </div>
+              
+          </div>
+
+
+  
+ 
+            </div>
+
+
+           
+              <div class="mt-4 pt-2">
+
+                <button (click)="udpdate()" data-bs-dismiss="modal" aria-label="Close" class="btn btn-success btn-lg form-control form-control-lg" type="submit"
+                    style="font-size: 30px; border-radius: 20px;"><b>Update</b></button>
+            </div>
+
+        </div> 
+
+        </form> 
+
+
+          </div>
+
+
+              
+        </div>
+      </div>
+    </div>
+

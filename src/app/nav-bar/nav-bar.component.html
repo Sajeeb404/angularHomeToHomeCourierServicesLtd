@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" *ngIf="isNab">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" routerLink="/homePage"><B style="font-size: 30px;"> COURIER SERVICE</B></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#" routerLink="/homePage"><b style="font-size: 20px;"> 
+                 Home</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/aboutPage"><b style="font-size: 20px;"> About </b></a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/viewFindUs"><b style="font-size: 20px;"> Find Us </b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/viewAllBranches"><b style="font-size: 20px;"> Branches </b></a>
+        </li>
+
+  <li class="nav-item" *ngIf="!isLoggedIn">
+    <a class="nav-link" href="#" routerLink="/viewService"><b style="font-size: 20px;"> Services </b></a>
+  </li>
+
+  <li class="nav-item" *ngIf="isLoggedIn">
+    <a class="nav-link" href="#" routerLink="/loiginuserService"><b style="font-size: 20px;"> Services </b></a>
+  </li>
+       <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link" href="#" routerLink="/viewCareerList"><b style="font-size: 20px;"> Career </b></a>
+        </li>
+       <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" href="#" routerLink=""><b style="font-size: 20px;"> Career </b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/ProductInformation"><b style="font-size: 20px;" *ngIf="isLoggedIn"> Couier Product </b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/CourieraViewlist"><b style="font-size: 20px;" *ngIf="isLoggedIn"> Courier List </b></a>
+        </li>
+
+
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+          <li class="nav-item">
+            <a href="" class="nav-link" routerLink="/regiForm"><b style="font-size: 20px;">Sign Up</b></a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link" routerLink="/loginForm"><b style="font-size: 20px;"><i class='bx bx-log-in' style="font-size: 25px;"></i> Login</b></a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+          <li class="nav-item">
+            <a href="" class="nav-link" routerLink="/viewProfile"><b style="font-size: 20px;"><i class='bx bxs-user' style="font-size: 25px;"></i> {{ username }}</b></a>
+          </li>
+
+          <li class="nav-item">
+            <a href class="nav-link" (click)="logout()"> <b style="font-size: 20px;"> <i class='bx bx-log-out' style="font-size: 25px;"></i> LogOut</b> </a>
+          </li>
+
+        </ul>
+      </ul>
+
+
+
+
+
+    </div>
+
+
+  </div>
+
+
+
+</nav>
+
+<app-admin *ngIf="showAdminBoard"></app-admin>
+

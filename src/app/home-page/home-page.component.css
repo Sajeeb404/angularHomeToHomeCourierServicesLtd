@@ -1,0 +1,102 @@
+/* *{
+    margin: 0;
+    padding: 0; 
+}
+.wrapper{
+    width: 1170px;
+    margin: auto;
+}
+header{
+    background: url("https://cdn.techjockey.com/blog/wp-content/uploads/2018/12/13172658/Top-10-Courier-Management-Software-in-India-2022_feature.jpg");
+    height: 100vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+.welcome-text{
+   position: relative;
+   width: 600px;
+   height: 300px;
+   margin: 20% 30%;
+   text-align: left;
+}
+
+h1{
+    text-align: center;
+    color: rgb(17, 16, 17);
+    text-transform: uppercase;
+    font-size: 60px;
+
+} */
+
+
+
+
+
+ html{
+    scroll-behavior: smooth;
+
+}
+
+.font{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    text-align: left;
+    color: rgb(10, 10, 10);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    font: bolder;
+    
+
+}
+.tex{
+    background-color: rgb(224, 252, 252);
+}
+header{
+    background-image: url("https://images.pexels.com/photos/4604599/pexels-photo-4604599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: center;
+
+    background-size: cover;
+}
+
+.banner-container{
+    height: 100vh;
+} 
+
+
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: right;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}

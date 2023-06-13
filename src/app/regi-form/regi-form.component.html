@@ -1,0 +1,304 @@
+<!-- 
+<section class="vh-100">
+  <div class="container-fluid" >
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row" >
+      
+      <div class="col-sm-6 text-black" style="background-color: rgb(45, 162, 230); margin:auto; ; width: 500px; border-radius: 20px;">
+
+
+        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+          <form style="width: 23rem;" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm" novalidate>
+
+            <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"><B style="font-size: 25px;">Registration
+                Form</B></h4>
+      
+
+            <div class="form-outline mb-4">
+              <label style="font-size: 20px;" class="form-label" for="form2Example18"><b>Full Name</b></label>
+              <input 
+              type="text" 
+              name="userfullname" 
+              [(ngModel)]="form.userfullname" 
+              required minlength="3"
+              maxlength="20" 
+              #userfullname="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && userfullname.errors }"
+              id="form2Example18"
+              placeholder="Full Name"
+              class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-outline mb-4">
+              <label style="font-size: 20px;" class="form-label" for="form2Example18"><b>User Name</b></label>
+              <input 
+              type="text" 
+              name="username" 
+              [(ngModel)]="form.username" 
+              required minlength="3" 
+              maxlength="20"
+              #username="ngModel" 
+              [ngClass]="{ 'is-invalid': f.submitted && username.errors }" 
+              id="form2Example18"
+              placeholder="User Name" 
+              class="form-control form-control-lg" novalidate />
+              <div class="invalid-feedback" *ngIf="username.errors && f.submitted">
+                <div *ngIf="username.errors['required']">Username is required</div>
+                <div *ngIf="username.errors['minlength']">
+                  Username must be at least 3 characters
+                </div>
+                <div *ngIf="username.errors['maxlength']">
+                  Username must be at most 20 characters
+                </div>
+              </div>
+            </div>
+
+            <div class="form-outline mb-4">
+              <label style="font-size: 20px;" class="form-label" for="form2Example18"><b>Email Address</b></label>
+              <input 
+              id="form2Example18" 
+              placeholder="Email Address" 
+              class="form-control form-control-lg" 
+              type="email"
+               name="email" 
+               [(ngModel)]="form.email" required email 
+               #email="ngModel"
+               [ngClass]="{ 'is-invalid': f.submitted && email.errors }" />
+
+              <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                <div *ngIf="email.errors['required']">Email is required</div>
+                <div *ngIf="email.errors['email']">
+                  Email must be a valid email address
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-outline mb-4">
+              <label style="font-size: 20px;" class="form-label" for="form2Example28"><b>Password</b></label>
+              <input 
+              id="form2Example28" 
+              placeholder="Password" 
+              class="form-control form-control-lg" 
+              type="password"
+              name="password" 
+              [(ngModel)]="form.password" 
+              required minlength="6" 
+              #password="ngModel"
+               [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+
+              <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors['required']">Password is required</div>
+                <div *ngIf="password.errors['minlength']">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-1 mb-4">
+              <button class="btn btn-primary btn-block" style="font-size: 24px;">Sign Up</button>
+            </div>
+
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+              Signup failed!<br/>{{ errorMessage }}
+            </div>
+
+           
+            <p style="font-size: 20px; ">I have an account? <a href="" class="link-info" routerLink="/loginForm" style="color: black;">Login Hare</a></p>
+          </form>
+
+
+          <div class="popup" id="popup" *ngIf="isSuccessful">
+            <div class="popups">
+              <h3>Your registration is successful!</h3>
+            </div>
+            <div>
+              <button style="margin-top: 35%; margin-left: 45%; width: 60px;" (click)="popupClose()">OK</button>
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+      </div>
+ 
+    
+      
+   
+    </div>
+
+  </div>
+ 
+</section> -->
+
+
+<section id="features" class="text-center">
+  <div class="container-fluid" >
+    <br>
+    <br>
+    <br>
+    <br>
+ 
+    <div class="row" >
+      
+      <div class="col-sm-6 text-black" style="background-color: rgb(45, 162, 230); margin:auto ; width: 500px; border-radius: 20px;">
+
+
+        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+          <form style="width: 23rem;" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm" novalidate>
+
+            <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"><B style="font-size: 25px;">Registration
+                Form</B></h4>
+      
+
+            <div class="form-outline mb-4">
+              <!-- <label style="font-size: 20px;" class="form-label" for="form2Example18"><b>Full Name</b></label> -->
+              <input 
+              type="text" 
+              name="userfullname" 
+              [(ngModel)]="form.userfullname" 
+              required minlength="3"
+              maxlength="20" 
+              #userfullname="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && userfullname.errors }"
+              id="form2Example18"
+              placeholder="Full Name"
+              class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-outline mb-4">
+              <!-- <label style="font-size: 20px;" class="form-label" for="form2Example18"><b>User Name</b></label> -->
+              <input 
+              type="text" 
+              name="username" 
+              [(ngModel)]="form.username" 
+              required minlength="3" 
+              maxlength="20"
+              #username="ngModel" 
+              [ngClass]="{ 'is-invalid': f.submitted && username.errors }" 
+              id="form2Example18"
+              placeholder="User Name" 
+              class="form-control form-control-lg" novalidate />
+              <div class="invalid-feedback" *ngIf="username.errors && f.submitted">
+                <div *ngIf="username.errors['required']">Username is required</div>
+                <div *ngIf="username.errors['minlength']">
+                  Username must be at least 3 characters
+                </div>
+                <div *ngIf="username.errors['maxlength']">
+                  Username must be at most 20 characters
+                </div>
+              </div>
+            </div>
+
+            <div class="form-outline mb-4">
+              <!-- <label style="font-size: 20px;" class="form-label" for="form2Example18"><b>Email Address</b></label> -->
+              <input 
+              id="form2Example18" 
+              placeholder="Email Address" 
+              class="form-control form-control-lg" 
+              type="email"
+               name="email" 
+               [(ngModel)]="form.email" required email 
+               #email="ngModel"
+               [ngClass]="{ 'is-invalid': f.submitted && email.errors }" />
+
+              <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                <div *ngIf="email.errors['required']">Email is required</div>
+                <div *ngIf="email.errors['email']">
+                  Email must be a valid email address
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-outline mb-4">
+              <!-- <label style="font-size: 20px;" class="form-label" for="form2Example28"><b>Password</b></label> -->
+              <input 
+              id="form2Example28" 
+              placeholder="Password" 
+              class="form-control form-control-lg" 
+              type="password"
+              name="password" 
+              [(ngModel)]="form.password" 
+              required minlength="6" 
+              #password="ngModel"
+               [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+
+              <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors['required']">Password is required</div>
+                <div *ngIf="password.errors['minlength']">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-1 mb-4">
+              <button class="btn btn-primary btn-block" style="font-size: 24px;">Sign Up</button>
+            </div>
+
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+              Signup failed!<br/>{{ errorMessage }}
+            </div>
+
+           
+            <p style="font-size: 20px; ">I have an account? <a href="" class="link-info" routerLink="/loginForm" style="color: black;">Login Hare</a></p>
+          </form>
+
+
+          <div class="popup" id="popup" *ngIf="isSuccessful">
+            <div class="popups">
+              <h3>Your registration is successful!</h3>
+            </div>
+            <div>
+              <button style="margin-top: 35%; margin-left: 45%; width: 60px;" (click)="popupClose()">OK</button>
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+      </div>
+ 
+    
+      
+   
+    </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+</section>
